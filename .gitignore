@@ -1,0 +1,9 @@
+__pycache__
+dist
+.idea
+.venv
+.python-version
+*.egg-info
+*.pyc
+
+.DS_Store

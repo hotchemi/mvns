@@ -1,0 +1,69 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+import argparse
+
+import requests
+
+
+def _create_parser():
+    parser = argparse.ArgumentParser(description='CLI tool to search library in maven central repository')
+    parser.add_argument('q', metavar='query', nargs='?', action='store', help='search by query')
+    parser.add_argument('-g', '--groupId', dest='groupId', action='store', metavar='groupId',
+                        help='specify groupId')
+    parser.add_argument('-a', '--artifactId', dest='artifactId', action='store', metavar='artifactId',
+                        help='specify artifactId')
+    parser.add_argument('-v', '--version', dest='version', action='store', metavar='version',
+                        help='specify version')
+    parser.add_argument('-A', '--allVersions', dest='allVersions', action='store_true', help='show all version')
+    parser.add_argument('-m', '--max', dest='max', type=int, action='store', default=20, metavar='max',
+                        help='limit number of result. default is 20')
+    return parser
+
+
+def _collect(json, func):
+    for item in json['response']['docs']:
+        line = "%s:%s" % (item['id'], item['latestVersion']) if 'latestVersion' in item else item['id']
+        func(line)
+
+
+def _request(params):
+    endpoint = "http://search.maven.org/solrsearch/select"
+    return requests.get(endpoint, params=params)
+
+
+def _format_params(args):
+    query = []
+    if args.q:
+        query.append(args.q)
+    if args.groupId:
+        query.append(append_query(query, 'g', args.groupId))
+    if args.artifactId:
+        query.append(append_query(query, 'a', args.artifactId))
+    if args.version:
+        query.append(append_query(query, 'v', args.version))
+    params = {'max': args.max, 'q': ''.join(query)}
+    if args.allVersions:
+        params['core'] = 'gav'
+    return params
+
+
+def append_query(query, key, value):
+    return "%s:%s" % (key, value) if not query else " AND %s:%s" % (key, value)
+
+
+def main():
+    parser = _create_parser()
+    args = parser.parse_args()
+    if args.q or args.groupId or args.artifactId:
+        response = _request(_format_params(args))
+        if response.status_code == 400:
+            parser.exit('Return status code 400. Please try it again.')
+        _collect(response.json(), print)
+    else:
+        parser.print_help()
+        parser.exit()
+
+
+if __name__ == '__main__':
+    main()
