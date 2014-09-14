@@ -42,7 +42,7 @@ def _format_params(args):
         query.append(append_query(query, 'a', args.artifactId))
     if args.version:
         query.append(append_query(query, 'v', args.version))
-    params = {'max': args.max, 'q': ''.join(query)}
+    params = {'rows': args.max, 'q': ''.join(query)}
     if args.allVersions:
         params['core'] = 'gav'
     return params
