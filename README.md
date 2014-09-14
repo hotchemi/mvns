@@ -34,19 +34,6 @@ com.squareup.picasso:picasso-pollexor:2.3.4
 com.marvinlabs:android-slideshow-widget-picasso-plugin:0.5.0
 ```
 
-### Search by query
-
-```sh
-> mvns picasso
-com.squareup.picasso:picasso:2.3.4
-it.sephiroth.android.library.picasso:picasso:2.3.4.3
-com.squareup.picasso:picasso-parent:2.3.4
-it.sephiroth.android.library.picasso:picasso-sample:2.1.6
-com.squareup.picasso:picasso-sample:2.3.4
-com.squareup.picasso:picasso-pollexor:2.3.4
-com.marvinlabs:android-slideshow-widget-picasso-plugin:0.5.0
-```
-
 ### Search by groupId and so on
 
 - `-g` Specify groupId.
