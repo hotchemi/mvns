@@ -1,7 +1,7 @@
 mvns
 ====
 
-[![Downloads](https://pypip.in/v/mvns/badge.png)](https://pypi.python.org/pypi?%3Aaction=pkg_edit&name=mvns) 
+[![Downloads](https://pypip.in/v/mvns/badge.png)](https://pypi.python.org/pypi/mvns/0.1.0) 
 
 CLI tool to search library in maven central repository.
 
