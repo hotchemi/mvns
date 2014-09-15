@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Mvns : CLI tool to search library in maven central repository">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mvns</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hotchemi/mvns">View on GitHub</a>
+
+          <h1 id="project_title">Mvns</h1>
+          <h2 id="project_tagline">CLI tool to search library in maven central repository</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hotchemi/mvns/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hotchemi/mvns/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="mvns" class="anchor" href="#mvns"><span class="octicon octicon-link"></span></a>mvns</h1>
+
+<p><a href="https://pypi.python.org/pypi/mvns/0.1.0"><img src="https://pypip.in/v/mvns/badge.png" alt="Downloads"></a> </p>
+
+<p>CLI tool to search library in maven central repository.</p>
+
+<h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p>Use <code>pip</code> or <code>easy_install</code>.</p>
+
+<div class="highlight highlight-sh"><pre>pip install mvns
+</pre></div>
+
+<p>or</p>
+
+<div class="highlight highlight-sh"><pre>easy_install install mvns
+</pre></div>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="search-by-query" class="anchor" href="#search-by-query"><span class="octicon octicon-link"></span></a>Search by query</h3>
+
+<div class="highlight highlight-sh"><pre>&gt; mvns picasso
+com.squareup.picasso:picasso:2.3.4
+it.sephiroth.android.library.picasso:picasso:2.3.4.3
+com.squareup.picasso:picasso-parent:2.3.4
+it.sephiroth.android.library.picasso:picasso-sample:2.1.6
+com.squareup.picasso:picasso-sample:2.3.4
+com.squareup.picasso:picasso-pollexor:2.3.4
+com.marvinlabs:android-slideshow-widget-picasso-plugin:0.5.0
+</pre></div>
+
+<h3>
+<a name="search-by-groupid-and-so-on" class="anchor" href="#search-by-groupid-and-so-on"><span class="octicon octicon-link"></span></a>Search by groupId and so on</h3>
+
+<ul>
+<li>
+<code>-g</code> Specify groupId.</li>
+<li>
+<code>-a</code> Specify artifactId.</li>
+<li>
+<code>-v</code> Specify version.</li>
+</ul><div class="highlight highlight-sh"><pre>mvns -g com.squareup.picasso -a picasso -v 2.3.4
+com.squareup.picasso:picasso:2.3.4
+</pre></div>
+
+<h3>
+<a name="select-all-version" class="anchor" href="#select-all-version"><span class="octicon octicon-link"></span></a>Select all version</h3>
+
+<ul>
+<li>
+<code>-A</code> Show all version. </li>
+</ul><div class="highlight highlight-sh"><pre>mvns -g com.squareup.picasso -a picasso -A
+com.squareup.picasso:picasso:2.3.4
+com.squareup.picasso:picasso:2.3.3
+com.squareup.picasso:picasso:2.3.2
+com.squareup.picasso:picasso:2.3.1
+com.squareup.picasso:picasso:2.3.0
+com.squareup.picasso:picasso:2.2.0
+com.squareup.picasso:picasso:2.1.1
+com.squareup.picasso:picasso:2.1.0
+com.squareup.picasso:picasso:2.0.2
+com.squareup.picasso:picasso:2.0.1
+</pre></div>
+
+<h3>
+<a name="limit-number-of-result" class="anchor" href="#limit-number-of-result"><span class="octicon octicon-link"></span></a>Limit number of result.</h3>
+
+<ul>
+<li>
+<code>-m</code> Limit number of result. default is 20.</li>
+</ul><div class="highlight highlight-sh"><pre>mvns picasso -m 1
+com.squareup.picasso:picasso:2.3.4
+</pre></div>
+
+<h2>
+<a name="support" class="anchor" href="#support"><span class="octicon octicon-link"></span></a>Support</h2>
+
+<p>Python 2.7 and 3.4 are supported.</p>
+
+<h2>
+<a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a>Contribute</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Added some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol><h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>ChangeLog</h2>
+
+<ul>
+<li>2014/09/14 0.1.0 release.</li>
+</ul><h2>
+<a name="licence" class="anchor" href="#licence"><span class="octicon octicon-link"></span></a>Licence</h2>
+
+<pre><code> Copyright 2014 Shintaro Katafuchi
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mvns maintained by <a href="https://github.com/hotchemi">hotchemi</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
