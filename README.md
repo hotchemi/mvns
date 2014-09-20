@@ -1,11 +1,12 @@
 mvns
 ====
 
-[![Downloads](https://pypip.in/v/mvns/badge.png)](https://pypi.python.org/pypi/mvns/0.1.0) 
+[![Downloads](https://pypip.in/v/mvns/badge.png)](https://pypi.python.org/pypi/mvns/)
 
 CLI tool to search library in maven central repository.
 
-## Install
+Install
+-------
 
 Use `pip` or `easy_install`.
 
@@ -19,7 +20,8 @@ or
 easy_install install mvns
 ```
 
-## Usage
+Usage
+-----
 
 ### Search by query
 
@@ -47,7 +49,7 @@ com.squareup.picasso:picasso:2.3.4
 
 ### Select all version
 
-- `-A` Show all version. 
+- `-A` Show all version.
 
 ```sh
 mvns -g com.squareup.picasso -a picasso -A
@@ -72,11 +74,13 @@ mvns picasso -m 1
 com.squareup.picasso:picasso:2.3.4
 ```
 
-## Support
+Support
+-------
 
 Python 2.7 and 3.4 are supported.
 
-## Contribute
+Contribute
+----------
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -84,11 +88,14 @@ Python 2.7 and 3.4 are supported.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## ChangeLog
+ChangeLog
+---------
 
+- 2014/09/20 0.1.1 release.
 - 2014/09/14 0.1.0 release.
 
-## Licence
+Licence
+-------
 
 ```
  Copyright 2014 Shintaro Katafuchi
