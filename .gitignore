@@ -1,9 +1,11 @@
 __pycache__
 dist
-.idea
 .venv
 .python-version
 *.egg-info
 *.pyc
+
+env
+.idea
 
 .DS_Store
