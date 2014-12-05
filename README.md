@@ -17,7 +17,7 @@ pip install mvns
 or
 
 ```sh
-easy_install install mvns
+easy_install mvns
 ```
 
 Usage
