@@ -38,18 +38,18 @@ def _format_params(args):
     if args.q:
         query.append(args.q)
     if args.groupId:
-        query.append(append_query(query, 'g', args.groupId))
+        query.append(_append_query(query, 'g', args.groupId))
     if args.artifactId:
-        query.append(append_query(query, 'a', args.artifactId))
+        query.append(_append_query(query, 'a', args.artifactId))
     if args.version:
-        query.append(append_query(query, 'v', args.version))
+        query.append(_append_query(query, 'v', args.version))
     params = {'rows': args.max, 'q': ''.join(query)}
     if args.allVersions:
         params['core'] = 'gav'
     return params
 
 
-def append_query(query, key, value):
+def _append_query(query, key, value):
     return "%s:%s" % (key, value) if not query else " AND %s:%s" % (key, value)
 
 
@@ -59,7 +59,7 @@ def main():
     if args.q or args.groupId or args.artifactId:
         response = _request(_format_params(args))
         if response.status_code == 400:
-            parser.exit('Return status code 400. Please try it again.')
+            parser.exit('Returns status code 400. Please try it again.')
         _collect(response.json(), print)
     else:
         parser.print_help()
