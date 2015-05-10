@@ -6,6 +6,7 @@ import argparse
 
 import requests
 
+
 def _create_parser():
     parser = argparse.ArgumentParser(description='CLI tool to search library in maven central repository')
     parser.add_argument('q', metavar='query', nargs='?', action='store', help='search by query')
@@ -25,7 +26,7 @@ def _create_parser():
 
 def _collect(json, func):
     for item in json['response']['docs']:
-        line = "%s:%s" % (item['id'], item['latestVersion']) if 'latestVersion' in item else item['id']
+        line = "compile '%s:%s'" % (item['id'], item['latestVersion']) if 'latestVersion' in item else item['id']
         func(line)
 
 
