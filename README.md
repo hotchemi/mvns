@@ -27,13 +27,13 @@ Usage
 
 ```sh
 > mvns picasso
-com.squareup.picasso:picasso:2.3.4
-it.sephiroth.android.library.picasso:picasso:2.3.4.3
-com.squareup.picasso:picasso-parent:2.3.4
-it.sephiroth.android.library.picasso:picasso-sample:2.1.6
-com.squareup.picasso:picasso-sample:2.3.4
-com.squareup.picasso:picasso-pollexor:2.3.4
-com.marvinlabs:android-slideshow-widget-picasso-plugin:0.5.0
+compile 'com.squareup.picasso:picasso:2.5.2'
+compile 'com.squareup.picasso:picasso-parent:2.5.2'
+compile 'it.sephiroth.android.library.picasso:picasso-sample:2.1.6'
+compile 'com.squareup.picasso:picasso-sample:2.5.2'
+compile 'com.squareup.picasso:picasso-pollexor:2.5.2'
+compile 'com.twotoasters.servos:util-picasso:1.0.0'
+compile 'com.marvinlabs:android-slideshow-widget-picasso-plugin:0.5.0'
 ```
 
 ### Search by groupId and so on
@@ -43,8 +43,8 @@ com.marvinlabs:android-slideshow-widget-picasso-plugin:0.5.0
 - `-v` Specify version.
 
 ```sh
-mvns -g com.squareup.picasso -a picasso -v 2.3.4
-com.squareup.picasso:picasso:2.3.4
+mvns -g com.squareup.picasso -a picasso -v 2.5.2
+compile 'com.squareup.picasso:picasso-parent:2.5.2'
 ```
 
 ### Select all version
@@ -53,16 +53,11 @@ com.squareup.picasso:picasso:2.3.4
 
 ```sh
 mvns -g com.squareup.picasso -a picasso -A
-com.squareup.picasso:picasso:2.3.4
-com.squareup.picasso:picasso:2.3.3
-com.squareup.picasso:picasso:2.3.2
-com.squareup.picasso:picasso:2.3.1
-com.squareup.picasso:picasso:2.3.0
-com.squareup.picasso:picasso:2.2.0
-com.squareup.picasso:picasso:2.1.1
-com.squareup.picasso:picasso:2.1.0
-com.squareup.picasso:picasso:2.0.2
-com.squareup.picasso:picasso:2.0.1
+compile 'com.squareup.picasso:picasso:2.3.4'
+compile 'com.squareup.picasso:picasso:2.3.3'
+compile 'com.squareup.picasso:picasso:2.3.2'
+compile 'com.squareup.picasso:picasso:2.3.1'
+compile 'com.squareup.picasso:picasso:2.3.0'
 ```
 
 ### Limit number of result.
@@ -71,13 +66,13 @@ com.squareup.picasso:picasso:2.0.1
 
 ```sh
 mvns picasso -m 1
-com.squareup.picasso:picasso:2.3.4
+compile 'com.squareup.picasso:picasso:2.3.4'
 ```
 
 Support
 -------
 
-Python 2.7 and 3.4 are supported.
+Supports Python 2.7 and 3.4.
 
 Contribute
 ----------
@@ -91,6 +86,7 @@ Contribute
 ChangeLog
 ---------
 
+- 2015/05/11 0.1.2 release.
 - 2014/09/20 0.1.1 release.
 - 2014/09/14 0.1.0 release.
 
