@@ -6,7 +6,6 @@ import argparse
 
 import requests
 
-
 def _create_parser():
     parser = argparse.ArgumentParser(description='CLI tool to search library in maven central repository')
     parser.add_argument('q', metavar='query', nargs='?', action='store', help='search by query')
@@ -19,6 +18,8 @@ def _create_parser():
     parser.add_argument('-A', '--allVersions', dest='allVersions', action='store_true', help='show all version')
     parser.add_argument('-m', '--max', dest='max', type=int, action='store', default=20, metavar='max',
                         help='limit number of result. default is 20')
+    parser.add_argument('-V', '--Version', dest='Version', action='version', version='0.1.2',
+                        help='show library version')
     return parser
 
 
