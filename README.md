@@ -1,7 +1,5 @@
-mvns
+mvns [![PyPI version](https://badge.fury.io/py/mvns.svg)](http://badge.fury.io/py/mvns)
 ====
-
-[![Downloads](https://pypip.in/v/mvns/badge.png)](https://pypi.python.org/pypi/mvns/)
 
 CLI tool to search library in maven central repository.
 
@@ -86,6 +84,7 @@ Contribute
 ChangeLog
 ---------
 
+- 2015/07/05 0.1.3 release.
 - 2015/05/11 0.1.2 release.
 - 2014/09/20 0.1.1 release.
 - 2014/09/14 0.1.0 release.
@@ -94,7 +93,7 @@ Licence
 -------
 
 ```
- Copyright 2014 Shintaro Katafuchi
+ Copyright 2015 Shintaro Katafuchi
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
